@@ -11,6 +11,12 @@ const AuthLayout = () => {
                     presentation: 'containedTransparentModal',
                 }}
             />
+            <Stack.Screen
+                name="onboarding"
+                options={{
+                    headerShown: false,
+                }}
+            />
         </Stack>
     )
 }

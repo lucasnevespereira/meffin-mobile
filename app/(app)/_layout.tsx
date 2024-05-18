@@ -1,6 +1,8 @@
 import {Tabs} from 'expo-router';
 import React from 'react';
 import Ionicons from "@expo/vector-icons/Ionicons";
+import {StyleSheet} from "react-native";
+import Colors from "@/constants/Colors";
 
 
 const AppLayout = () => {
@@ -8,12 +10,16 @@ const AppLayout = () => {
         <Tabs
             screenOptions={{
                 headerShown: false,
+                tabBarStyle: styles.tabBarStyle,
+                tabBarShowLabel: false,
+                tabBarActiveTintColor: Colors.primary,
+                tabBarInactiveTintColor: Colors.grey,
             }}>
             <Tabs.Screen
                 name="home"
                 options={{
                     title: 'Home',
-                    tabBarIcon: ({size, color}) => <Ionicons name="home" size={size} color={color}/>,
+                    tabBarIcon: ({size, color}) => <Ionicons name="wallet" size={size} color={color}/>,
                 }}
             />
             <Tabs.Screen
@@ -26,5 +32,22 @@ const AppLayout = () => {
         </Tabs>
     );
 }
+
+const styles = StyleSheet.create({
+    tabBarStyle: {
+        borderTopColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        position: "absolute",
+        marginBottom: 10,
+        marginTop: 5,
+        paddingHorizontal: 12,
+        paddingTop: 12,
+        height: 100,
+        marginHorizontal: 35,
+        borderTopWidth: 0,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
 
 export default AppLayout;

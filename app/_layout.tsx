@@ -55,13 +55,15 @@ const RootLayout = () => {
 const App = () => {
     const router = useRouter()
     const {isLoaded, isSignedIn} = useAuth();
+    // TODO get user currency metadata
     useEffect(() => {
+        // TODO: add condition if user does not have currency
         if (isLoaded && !isSignedIn) {
             router.navigate('/(auth)');
         } else if (isLoaded && isSignedIn) {
             router.navigate('/(app)/home');
         }
-    }, [isLoaded, isSignedIn]);
+    }, [isLoaded]);
     return (
         <Slot/>
     )
