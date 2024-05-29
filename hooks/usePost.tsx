@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 interface PostResponse {
-    [key: string]: any; // Adjust this according to the expected response shape
+    [key: string]: any;
 }
 
 interface UsePostReturn {

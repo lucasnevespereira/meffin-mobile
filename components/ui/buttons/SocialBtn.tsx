@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, TouchableOpacity, StyleSheet} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Colors from "@/constants/Colors";
+import Colors from "@/constants/colors";
 
 interface SocialBtnProps {
     iconName: keyof typeof Ionicons.glyphMap;
@@ -20,9 +20,9 @@ const SocialBtn = ({iconName, buttonText, onPress}: SocialBtnProps) => {
 
 const styles = StyleSheet.create({
     btnOutline: {
-        backgroundColor: Colors.light,
+        backgroundColor: Colors.theme.light,
         borderWidth: 1,
-        borderColor: Colors.grey,
+        borderColor: Colors.theme.grey,
         height: 50,
         borderRadius: 8,
         alignItems: 'center',
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
     btnOutlineText: {
-        color: Colors.dark,
+        color: Colors.theme.dark,
         fontSize: 16,
     },
     btnIcon: {

@@ -5,4 +5,11 @@ export default {
   light: '#eee',
   white: '#fff',
   transparent: 'transparent',
+
+  theme: {
+    primary: '#feeda1',
+    dark: '#242424',
+    light: '#fbfbf3',
+    grey: '#84847f',
+  }
 };

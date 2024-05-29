@@ -2,7 +2,7 @@ import {Tabs} from 'expo-router';
 import React from 'react';
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {StyleSheet} from "react-native";
-import Colors from "@/constants/Colors";
+import Colors from "@/constants/colors";
 
 
 const AppLayout = () => {

@@ -1,10 +1,13 @@
 import {useFonts} from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import 'react-native-reanimated';
 import {Slot, useRouter} from 'expo-router';
 import {ClerkProvider, useAuth} from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
+import i18n from '@/i18n';
+import {I18nextProvider} from 'react-i18next';
+
 
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY as string;
 
@@ -29,6 +32,7 @@ const tokenCache = {
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
+
     const [loaded] = useFonts({
         SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     });
@@ -37,16 +41,18 @@ const RootLayout = () => {
         if (loaded) {
             SplashScreen.hideAsync();
         }
-
     }, [loaded]);
 
     if (!loaded) {
         return null;
     }
 
+
     return (
         <ClerkProvider tokenCache={tokenCache} publishableKey={CLERK_PUBLISHABLE_KEY}>
-            <App/>
+            <I18nextProvider i18n={i18n}>
+                <App/>
+            </I18nextProvider>
         </ClerkProvider>
 
     );
